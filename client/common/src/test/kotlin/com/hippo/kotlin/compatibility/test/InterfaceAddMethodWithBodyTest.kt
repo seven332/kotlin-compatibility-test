@@ -19,7 +19,7 @@ package com.hippo.kotlin.compatibility.test
 import kotlin.test.Test
 
 /**
- * Add a new method with body to interface.
+ * Add new methods with body to interfaces.
  */
 class InterfaceAddMethodWithBodyTest {
 

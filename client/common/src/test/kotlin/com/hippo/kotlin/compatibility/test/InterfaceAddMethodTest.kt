@@ -19,7 +19,7 @@ package com.hippo.kotlin.compatibility.test
 import kotlin.test.Test
 
 /**
- * Add a new method to interface.
+ * Add new methods to interfaces.
  */
 class InterfaceAddMethodTest {
 
