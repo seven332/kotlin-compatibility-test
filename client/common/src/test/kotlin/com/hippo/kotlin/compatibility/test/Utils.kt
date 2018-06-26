@@ -16,32 +16,17 @@
 
 package com.hippo.kotlin.compatibility.test
 
-import kotlin.test.Test
+private const val FAIL_FAILED_MESSAGE = "The action didn't fail."
 
-/**
- * Add a new method with body to interface.
- */
-class InterfaceAddMethodWithBodyTest {
-
-  /**
-   * Call the unchanged method.
-   * PASS
-   */
-  @Test
-  fun callUnchangedMethod() {
-    val implement: InterfaceAddMethod = InterfaceAddMethodImplement()
-    implement.unchangedMethod()
-  }
-
-  /**
-   * Call the new method.
-   * FAIL
-   */
-  @Test
-  fun callNewMethod() {
-    val implement: InterfaceAddMethod = InterfaceAddMethodImplement()
-    fail {
-      implement.newMethod()
+fun fail(action: () -> Unit) {
+  var error: AssertionError? = null
+  try {
+    action()
+    error = AssertionError(FAIL_FAILED_MESSAGE)
+    throw error
+  } catch (e: Throwable) {
+    if (e === error) {
+      throw e
     }
   }
 }

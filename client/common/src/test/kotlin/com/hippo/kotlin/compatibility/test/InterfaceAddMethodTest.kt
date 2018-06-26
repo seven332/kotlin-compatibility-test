@@ -17,7 +17,6 @@
 package com.hippo.kotlin.compatibility.test
 
 import kotlin.test.Test
-import kotlin.test.fail
 
 /**
  * Add a new method to interface.
@@ -41,9 +40,8 @@ class InterfaceAddMethodTest {
   @Test
   fun callNewMethod() {
     val implement: InterfaceAddMethod = InterfaceAddMethodImplement()
-    try {
+    fail {
       implement.newMethod()
-      fail()
-    } catch (e: Throwable) {}
+    }
   }
 }
