@@ -21,6 +21,9 @@ import kotlin.test.assertEquals
 
 class VersionTest {
 
+  /**
+   * Ensure the new version api is integrated.
+   */
   @Test
   fun testVersion() = assertEquals(2, VERSION)
 }
