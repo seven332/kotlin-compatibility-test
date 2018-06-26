@@ -21,3 +21,13 @@ dependencies {
     compileOnly project(":api1:js")
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
 }
+
+compileKotlin2Js {
+    kotlinOptions.outputFile = "$project.buildDir.path/classes/kotlin/main/plugin.js"
+    kotlinOptions.moduleKind = 'commonjs'
+}
+
+compileTestKotlin2Js {
+    kotlinOptions.outputFile = "$project.buildDir.path/classes/kotlin/test/plugin.js"
+    kotlinOptions.moduleKind = 'commonjs'
+}
