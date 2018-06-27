@@ -16,6 +16,10 @@
 
 package com.hippo.kotlin.compatibility.test
 
+class AbstractClassAddMethodImplement : AbstractClassAddMethod() {
+  override fun unchangedMethod() {}
+}
+
 class AbstractClassAddMethodWithBodyImplement : AbstractClassAddMethodWithBody() {
   override fun unchangedMethod() {}
 }
