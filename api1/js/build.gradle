@@ -22,11 +22,11 @@ dependencies {
 }
 
 compileKotlin2Js {
-    kotlinOptions.outputFile = "$project.buildDir.path/classes/kotlin/main/api.js"
+    kotlinOptions.outputFile = "${project.buildDir.path}/classes/kotlin/main/api.js"
     kotlinOptions.moduleKind = 'commonjs'
 }
 
 compileTestKotlin2Js {
-    kotlinOptions.outputFile = "$project.buildDir.path/classes/kotlin/test/api.js"
+    kotlinOptions.outputFile = "${project.buildDir.path}/classes/kotlin/test/api.js"
     kotlinOptions.moduleKind = 'commonjs'
 }

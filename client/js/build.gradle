@@ -26,12 +26,12 @@ dependencies {
 }
 
 compileKotlin2Js {
-    kotlinOptions.outputFile = "$project.buildDir.path/classes/kotlin/main/client.js"
+    kotlinOptions.outputFile = "${project.buildDir.path}/classes/kotlin/main/client.js"
     kotlinOptions.moduleKind = 'commonjs'
 }
 
 compileTestKotlin2Js {
-    kotlinOptions.outputFile = "$project.buildDir.path/classes/kotlin/test/client.js"
+    kotlinOptions.outputFile = "${project.buildDir.path}/classes/kotlin/test/client.js"
     kotlinOptions.moduleKind = 'commonjs'
 }
 

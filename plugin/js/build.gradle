@@ -23,11 +23,11 @@ dependencies {
 }
 
 compileKotlin2Js {
-    kotlinOptions.outputFile = "$project.buildDir.path/classes/kotlin/main/plugin.js"
+    kotlinOptions.outputFile = "${project.buildDir.path}/classes/kotlin/main/plugin.js"
     kotlinOptions.moduleKind = 'commonjs'
 }
 
 compileTestKotlin2Js {
-    kotlinOptions.outputFile = "$project.buildDir.path/classes/kotlin/test/plugin.js"
+    kotlinOptions.outputFile = "${project.buildDir.path}/classes/kotlin/test/plugin.js"
     kotlinOptions.moduleKind = 'commonjs'
 }
