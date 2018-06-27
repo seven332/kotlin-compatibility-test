@@ -34,12 +34,12 @@ class DataClassAddParameterTest {
   fun accessUnchangedParameter(): Unit = when (PLATFORM) {
     Platform.JVM -> {
       fail {
-        val data: DataClassAddParameter = DATA_CLASS_ADD_PARAMETER_IMPLEMENT
+        val data: DataClassAddParameter = DataClassAddParameterImplementHolder.value
         assertEquals(1, data.unchangedParameter)
       }
     }
     Platform.JS -> {
-      val data: DataClassAddParameter = DATA_CLASS_ADD_PARAMETER_IMPLEMENT
+      val data: DataClassAddParameter = DataClassAddParameterImplementHolder.value
       assertEquals(1, data.unchangedParameter)
     }
   }
@@ -53,16 +53,61 @@ class DataClassAddParameterTest {
   fun accessNewParameter(): Unit = when (PLATFORM) {
     Platform.JVM -> {
       fail {
-        val data: DataClassAddParameter = DATA_CLASS_ADD_PARAMETER_IMPLEMENT
+        val data: DataClassAddParameter = DataClassAddParameterImplementHolder.value
         println(data.newParameter)
       }
     }
     Platform.JS -> {
-      val data: DataClassAddParameter = DATA_CLASS_ADD_PARAMETER_IMPLEMENT
+      val data: DataClassAddParameter = DataClassAddParameterImplementHolder.value
       println(data.newParameter)
       fail {
         assertNotNull(data.newParameter)
       }
+    }
+  }
+}
+
+/**
+ * Add new parameters to with default value data classes.
+ */
+class DataClassAddParameterWithDefaultValueTest {
+
+  /**
+   * Access the unchanged parameter.
+   * JVM: PASS
+   * JS:  FAIL
+   */
+  @Test
+  fun accessUnchangedParameter(): Unit = when (PLATFORM) {
+    Platform.JVM -> {
+      fail {
+        val data: DataClassAddParameterWithDefaultValue = DataClassAddParameterWithDefaultValueImplementHolder.value
+        assertEquals(1, data.unchangedParameter)
+      }
+    }
+    Platform.JS -> {
+      val data: DataClassAddParameterWithDefaultValue = DataClassAddParameterWithDefaultValueImplementHolder.value
+      assertEquals(1, data.unchangedParameter)
+    }
+  }
+
+  /**
+   * Access the new parameter.
+   * JVM: FAIL
+   * JS:  PASS
+   */
+  @Test
+  fun accessNewParameter(): Unit = when (PLATFORM) {
+    Platform.JVM -> {
+      fail {
+        val data: DataClassAddParameterWithDefaultValue = DataClassAddParameterWithDefaultValueImplementHolder.value
+        assertEquals(2, data.newParameter)
+      }
+    }
+    Platform.JS -> {
+      val data: DataClassAddParameterWithDefaultValue = DataClassAddParameterWithDefaultValueImplementHolder.value
+      println(data.newParameter)
+      assertEquals(2, data.newParameter)
     }
   }
 }

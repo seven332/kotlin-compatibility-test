@@ -16,4 +16,10 @@
 
 package com.hippo.kotlin.compatibility.test
 
-val DATA_CLASS_ADD_PARAMETER_IMPLEMENT = DataClassAddParameter(1)
+object DataClassAddParameterImplementHolder {
+  val value = DataClassAddParameter(1)
+}
+
+object DataClassAddParameterWithDefaultValueImplementHolder {
+  val value = DataClassAddParameterWithDefaultValue(1)
+}

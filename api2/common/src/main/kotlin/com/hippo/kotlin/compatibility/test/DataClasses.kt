@@ -17,3 +17,5 @@
 package com.hippo.kotlin.compatibility.test
 
 data class DataClassAddParameter(val unchangedParameter: Int, val newParameter: Int)
+
+data class DataClassAddParameterWithDefaultValue(val unchangedParameter: Int, val newParameter: Int = 2)
