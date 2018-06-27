@@ -16,13 +16,11 @@
 
 package com.hippo.kotlin.compatibility.test
 
-private const val FAIL_FAILED_MESSAGE = "The action didn't fail."
-
-fun fail(action: () -> Unit) {
+inline fun fail(action: () -> Unit) {
   var error: AssertionError? = null
   try {
     action()
-    error = AssertionError(FAIL_FAILED_MESSAGE)
+    error = AssertionError("The action didn't fail.")
     throw error
   } catch (e: Throwable) {
     if (e === error) {
