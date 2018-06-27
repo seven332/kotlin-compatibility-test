@@ -16,7 +16,5 @@
 
 package com.hippo.kotlin.compatibility.test
 
-class InterfaceAddMethodWithBodyImplement : InterfaceAddMethodWithBody {
-
-  override fun unchangedMethod() {}
-}
+actual val PLATFORM: Platform
+  get() = Platform.JS

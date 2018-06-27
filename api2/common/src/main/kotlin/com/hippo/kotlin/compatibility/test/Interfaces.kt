@@ -16,9 +16,12 @@
 
 package com.hippo.kotlin.compatibility.test
 
-interface InterfaceAddMethodWithBody {
-
+interface InterfaceAddMethod {
   fun unchangedMethod()
+  fun newMethod()
+}
 
+interface InterfaceAddMethodWithBody {
+  fun unchangedMethod()
   fun newMethod() {}
 }

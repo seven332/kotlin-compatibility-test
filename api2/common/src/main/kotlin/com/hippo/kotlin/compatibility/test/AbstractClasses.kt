@@ -17,8 +17,6 @@
 package com.hippo.kotlin.compatibility.test
 
 abstract class AbstractClassAddMethodWithBody {
-
   abstract fun unchangedMethod()
-
   fun newMethod() {}
 }

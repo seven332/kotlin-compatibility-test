@@ -16,7 +16,6 @@
 
 package com.hippo.kotlin.compatibility.test
 
-interface InterfaceAddMethod {
-
-  fun unchangedMethod()
+abstract class AbstractClassAddMethodWithBody {
+  abstract fun unchangedMethod()
 }

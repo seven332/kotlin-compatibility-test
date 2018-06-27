@@ -30,3 +30,9 @@ fun fail(action: () -> Unit) {
     }
   }
 }
+
+enum class Platform {
+  JVM, JS
+}
+
+expect val PLATFORM: Platform

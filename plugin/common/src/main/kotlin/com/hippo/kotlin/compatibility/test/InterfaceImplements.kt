@@ -16,35 +16,10 @@
 
 package com.hippo.kotlin.compatibility.test
 
-import org.junit.Test
-import kotlin.test.assertEquals
+class InterfaceAddMethodImplement : InterfaceAddMethod {
+  override fun unchangedMethod() {}
+}
 
-/**
- * Add new parameters to data classes.
- */
-actual class DataClassAddParameterTest {
-
-  /**
-   * Call the unchanged parameter.
-   * FAIL
-   */
-  @Test
-  actual fun accessUnchangedParameter()  {
-    fail {
-      val data: DataClassAddParameter = DATA_CLASS_ADD_PARAMETER_IMPLEMENT
-      assertEquals(1, data.unchangedParameter)
-    }
-  }
-
-  /**
-   * Call the unchanged parameter.
-   * FAIL
-   */
-  @Test
-  actual fun accessNewParameter() {
-    fail {
-      val data: DataClassAddParameter = DATA_CLASS_ADD_PARAMETER_IMPLEMENT
-      data.newParameter
-    }
-  }
+class InterfaceAddMethodWithBodyImplement : InterfaceAddMethodWithBody {
+  override fun unchangedMethod() {}
 }

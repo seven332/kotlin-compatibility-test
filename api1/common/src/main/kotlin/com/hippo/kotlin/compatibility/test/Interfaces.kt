@@ -16,7 +16,10 @@
 
 package com.hippo.kotlin.compatibility.test
 
-class InterfaceAddMethodImplement : InterfaceAddMethod {
+interface InterfaceAddMethod {
+  fun unchangedMethod()
+}
 
-  override fun unchangedMethod() {}
+interface InterfaceAddMethodWithBody {
+  fun unchangedMethod()
 }

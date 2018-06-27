@@ -16,32 +16,5 @@
 
 package com.hippo.kotlin.compatibility.test
 
-import kotlin.test.Test
-
-/**
- * Add new methods with body to interfaces.
- */
-class InterfaceAddMethodWithBodyTest {
-
-  /**
-   * Call the unchanged method.
-   * PASS
-   */
-  @Test
-  fun callUnchangedMethod() {
-    val implement: InterfaceAddMethod = InterfaceAddMethodImplement()
-    implement.unchangedMethod()
-  }
-
-  /**
-   * Call the new method.
-   * FAIL
-   */
-  @Test
-  fun callNewMethod() {
-    val implement: InterfaceAddMethod = InterfaceAddMethodImplement()
-    fail {
-      implement.newMethod()
-    }
-  }
-}
+actual val PLATFORM: Platform
+  get() = Platform.JVM

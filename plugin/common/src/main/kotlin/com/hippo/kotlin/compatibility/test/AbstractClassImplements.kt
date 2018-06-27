@@ -16,30 +16,6 @@
 
 package com.hippo.kotlin.compatibility.test
 
-import kotlin.test.Test
-
-/**
- * Add new methods with body to abstract classes.
- */
-class AbstractClassAddMethodWithBodyTest {
-
-  /**
-   * Call the unchanged method.
-   * PASS
-   */
-  @Test
-  fun callUnchangedMethod() {
-    val implement: AbstractClassAddMethodWithBody = AbstractClassAddMethodWithBodyImplement()
-    implement.unchangedMethod()
-  }
-
-  /**
-   * Call the new method.
-   * PASS
-   */
-  @Test
-  fun callNewMethod() {
-    val implement: AbstractClassAddMethodWithBody = AbstractClassAddMethodWithBodyImplement()
-    implement.newMethod()
-  }
+class AbstractClassAddMethodWithBodyImplement : AbstractClassAddMethodWithBody() {
+  override fun unchangedMethod() {}
 }

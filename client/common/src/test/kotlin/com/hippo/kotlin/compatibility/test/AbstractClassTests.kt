@@ -17,34 +17,29 @@
 package com.hippo.kotlin.compatibility.test
 
 import kotlin.test.Test
-import kotlin.test.assertEquals
 
 /**
- * Add new parameters to data classes.
+ * Add new methods with body to abstract classes.
  */
-actual class DataClassAddParameterTest {
+class AbstractClassTests {
 
   /**
-   * Call the unchanged parameter.
+   * Call the unchanged method.
    * PASS
    */
   @Test
-  actual fun accessUnchangedParameter()  {
-    val data: DataClassAddParameter = DATA_CLASS_ADD_PARAMETER_IMPLEMENT
-    assertEquals(1, data.unchangedParameter)
+  fun callUnchangedMethod() {
+    val implement: AbstractClassAddMethodWithBody = AbstractClassAddMethodWithBodyImplement()
+    implement.unchangedMethod()
   }
 
   /**
-   * Call the new parameter.
-   * FAIL
+   * Call the new method.
+   * PASS
    */
   @Test
-  actual fun accessNewParameter() {
-    val data: DataClassAddParameter = DATA_CLASS_ADD_PARAMETER_IMPLEMENT
-    fail {
-      if (data.newParameter == undefined) {
-        throw AssertionError("Illegal value: <$undefined>.")
-      }
-    }
+  fun callNewMethod() {
+    val implement: AbstractClassAddMethodWithBody = AbstractClassAddMethodWithBodyImplement()
+    implement.newMethod()
   }
 }
